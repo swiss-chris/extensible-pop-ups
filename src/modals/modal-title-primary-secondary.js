@@ -1,5 +1,5 @@
 import React from "react";
-import { string } from "prop-types";
+import { string, node } from "prop-types";
 import {
   Title,
   ButtonContainer,
@@ -32,5 +32,9 @@ ModalWithTitleAndPrimaryAndSecondaryButtons.defaultProps = {
   height: "initial"
 };
 ModalWithTitleAndPrimaryAndSecondaryButtons.propTypes = {
-  height: string
+  height: string,
+  title: string.isRequired,
+  middleSection: node.isRequired,
+  primaryButtonText: string,
+  secondaryButtonText: string
 };

@@ -8,6 +8,8 @@ import {
 } from "./modals/styled-components";
 import { ModalWithTitleAndPrimaryAndSecondaryButtons } from "./modals/modal-title-primary-secondary";
 import { ModalWithTitleAndPrimaryButtonAndX } from "./modals/modal-title-primary-x";
+import { ModalWithTitleAndX } from "./modals/modal-title-x";
+import { PopupTable, PopupTableRow } from "./popup-table";
 
 const Global = styled.div`
   font-family: "Open Sans", sans-serif;
@@ -60,6 +62,13 @@ export default function App() {
           primaryButtonText="Save"
           secondaryButtonText="Cancel"
         />
+        <ModalWithTitleAndX title="Header Title">
+          <PopupTable>
+            <PopupTableRow />
+            <PopupTableRow />
+            <PopupTableRow />
+          </PopupTable>
+        </ModalWithTitleAndX>
       </ModalBackground>
     </Global>
   );

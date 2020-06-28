@@ -1,19 +1,8 @@
+import { string, node } from "prop-types";
 import React from "react";
-import { string } from "prop-types";
-import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import { ButtonContainer, PrimaryButton, Title } from "./styled-components";
 import { ModalWith3Sections } from "./modal-3-sections";
-
-const FontAwesomeIconWithHeight = styled(FontAwesomeIcon)`
-  height: 22px;
-`;
-
-const TitleWithX = styled(Title)`
-  display: flex;
-  justify-content: space-between;
-`;
+import { ButtonContainer, PrimaryButton } from "./styled-components";
+import { TitleWithX } from "./title-with-x";
 
 export const ModalWithTitleAndPrimaryButtonAndX = ({
   height,
@@ -23,16 +12,7 @@ export const ModalWithTitleAndPrimaryButtonAndX = ({
 }) => (
   <ModalWith3Sections
     height={height}
-    topSection={
-      <TitleWithX>
-        {title}
-        <FontAwesomeIconWithHeight
-          height="22px"
-          icon={faTimes}
-          color="#246399"
-        />
-      </TitleWithX>
-    }
+    topSection={<TitleWithX title={title} />}
     middleSection={middleSection}
     bottomSection={
       <ButtonContainer>
@@ -46,5 +26,8 @@ ModalWithTitleAndPrimaryButtonAndX.defaultProps = {
   height: "initial"
 };
 ModalWithTitleAndPrimaryButtonAndX.propTypes = {
-  height: string
+  height: string,
+  title: string.isRequired,
+  middleSection: node.isRequired,
+  primaryButtonText: string.isRequired
 };
