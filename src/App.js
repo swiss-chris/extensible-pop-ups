@@ -50,12 +50,16 @@ export default function App() {
           }
           primaryButtonText="Okay"
           secondaryButtonText="Cancel"
+          primaryButtonCallback={() => alert("primary button clicked !")}
+          secondaryButtonCallback={() => alert("secondary button clicked !")}
         />
         <ModalWithTitleAndPrimaryAndSecondaryButtons
           title="Create saved filter"
           middleSection={<ModalInput placeholder="Enter Filter name" />}
           primaryButtonText="Save"
           secondaryButtonText="Cancel"
+          primaryButtonCallback={() => alert("primary button clicked !")}
+          secondaryButtonCallback={() => alert("secondary button clicked !")}
         />
         <ModalWithTitleAndPrimaryButtonAndX
           title="Create Saved Filter"

@@ -76,9 +76,25 @@ export const Button = styled.button`
 
 export const PrimaryButton = styled(Button)`
   background-color: #ebf5ff;
+
+  &:hover {
+    background-color: #cee2f5;
+  }
+
+  &:active {
+    background-color: #a8c5e2;
+  }
 `;
 
 export const SecondaryButton = styled(Button)`
   border: 1px solid #24619a;
   margin-left: 10px;
+
+  &:hover {
+    border-color: #78b2e9;
+  }
+
+  &:active {
+    border-color: rgb(16, 58, 98);
+  }
 `;

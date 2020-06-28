@@ -1,5 +1,5 @@
 import React from "react";
-import { string, node } from "prop-types";
+import { string, func, node } from "prop-types";
 import {
   Title,
   ButtonContainer,
@@ -14,7 +14,9 @@ export const ModalWithTitleAndPrimaryAndSecondaryButtons = ({
   borderColor,
   middleSection,
   primaryButtonText,
-  secondaryButtonText
+  secondaryButtonText,
+  primaryButtonCallback,
+  secondaryButtonCallback
 }) => (
   <ModalWith3Sections
     height={height}
@@ -23,8 +25,12 @@ export const ModalWithTitleAndPrimaryAndSecondaryButtons = ({
     middleSection={middleSection}
     bottomSection={
       <ButtonContainer>
-        <PrimaryButton>{primaryButtonText}</PrimaryButton>
-        <SecondaryButton>{secondaryButtonText}</SecondaryButton>
+        <PrimaryButton onClick={primaryButtonCallback}>
+          {primaryButtonText}
+        </PrimaryButton>
+        <SecondaryButton onClick={secondaryButtonCallback}>
+          {secondaryButtonText}
+        </SecondaryButton>
       </ButtonContainer>
     }
   />
@@ -37,6 +43,8 @@ ModalWithTitleAndPrimaryAndSecondaryButtons.propTypes = {
   height: string,
   title: string.isRequired,
   middleSection: node.isRequired,
-  primaryButtonText: string,
-  secondaryButtonText: string
+  primaryButtonText: string.isRequired,
+  secondaryButtonText: string.isRequired,
+  primaryButtonCallback: func.isRequired,
+  secondaryButtonCallback: func.isRequired
 };
