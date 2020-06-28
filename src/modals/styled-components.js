@@ -28,16 +28,9 @@ export const ModalContent = styled.div`
 
 // Sections
 
-export const TopSection = styled.div``;
-
 export const MiddleSection = styled.div`
-  /* flex-grow: 1; */
   padding-top: 15px;
   padding-bottom: 24px;
-`;
-
-export const BottomSection = styled.div`
-  height: 40px;
 `;
 
 // Section Content

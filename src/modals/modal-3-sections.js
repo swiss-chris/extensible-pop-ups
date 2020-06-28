@@ -1,6 +1,6 @@
 import React from "react";
-import { MiddleSection, BottomSection } from "./styled-components";
 import { Modal } from "./modal";
+import { MiddleSection } from "./styled-components";
 
 export const ModalWith3Sections = ({
   height,
@@ -11,6 +11,6 @@ export const ModalWith3Sections = ({
   <Modal height={height}>
     {topSection}
     <MiddleSection>{middleSection}</MiddleSection>
-    <BottomSection>{bottomSection}</BottomSection>
+    {bottomSection}
   </Modal>
 );

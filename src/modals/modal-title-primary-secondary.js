@@ -17,7 +17,7 @@ export const ModalWithTitleAndPrimaryAndSecondaryButtons = ({
 }) => (
   <ModalWith3Sections
     height={height}
-    topSection={<Title>{title}</Title>}
+    title={<Title>{title}</Title>}
     middleSection={middleSection}
     bottomSection={
       <ButtonContainer>
