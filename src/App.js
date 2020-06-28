@@ -10,7 +10,8 @@ import { ModalWithTitleAndPrimaryAndSecondaryButtons } from "./modals/modal-titl
 import { ModalWithTitleAndPrimaryButtonAndX } from "./modals/modal-title-primary-x";
 import { ModalWithTitleAndX } from "./modals/modal-title-x";
 import { PopupTable, PopupTableRow } from "./popup-table";
-import { ModalWithInput } from "./modals/modal-with-input";
+import { ModalWithInputAndSecondaryButton } from "./modals/modal-with-input-sec-button";
+import { ModalWithInputAndX } from "./modals/modal-with-input-x";
 
 const Global = styled.div`
   font-family: "Open Sans", sans-serif;
@@ -54,7 +55,7 @@ export default function App() {
           primaryButtonCallback={() => alert("primary button clicked !")}
           secondaryButtonCallback={() => alert("secondary button clicked !")}
         />
-        <ModalWithInput
+        <ModalWithInputAndSecondaryButton
           title="Create saved filter"
           placeholder="Enter Filter name"
           primaryButtonText="Save"
@@ -64,10 +65,13 @@ export default function App() {
           }
           secondaryButtonCallback={() => alert("secondary button clicked !")}
         />
-        <ModalWithTitleAndPrimaryButtonAndX
+        <ModalWithInputAndX
           title="Create Saved Filter"
-          middleSection={<ModalInput placeholder="Enter Filter name" />}
+          placeholder="Enter Filter name"
           primaryButtonText="Save"
+          primaryButtonCallback={filter =>
+            alert(`And the filter name is ... '${filter}'`)
+          }
           xCallback={() => alert("x clicked !")}
         />
         <ModalWithTitleAndX
