@@ -3,9 +3,9 @@ import { string, node } from "prop-types";
 import { Modal } from "./modal";
 import { TitleWithX } from "./title-with-x";
 
-export const ModalWithTitleAndX = ({ height, title, children }) => (
+export const ModalWithTitleAndX = ({ height, title, xCallback, children }) => (
   <Modal height={height}>
-    <TitleWithX title={title} />
+    <TitleWithX title={title} xCallback={xCallback} />
     {children}
   </Modal>
 );

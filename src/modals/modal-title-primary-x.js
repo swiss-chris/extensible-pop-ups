@@ -8,11 +8,12 @@ export const ModalWithTitleAndPrimaryButtonAndX = ({
   height,
   title,
   middleSection,
-  primaryButtonText
+  primaryButtonText,
+  xCallback
 }) => (
   <ModalWith3Sections
     height={height}
-    topSection={<TitleWithX title={title} />}
+    topSection={<TitleWithX title={title} xCallback={xCallback} />}
     middleSection={middleSection}
     bottomSection={
       <ButtonContainer>
