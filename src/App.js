@@ -1,11 +1,13 @@
 import React from "react";
 import "./styles.css";
 import styled from "styled-components";
-import { ModalBackground, TextBlock, PopupInput } from "./styled-components";
 import {
-  ModalWithTitleAndPrimaryAndSecondaryButtons,
-  ModalWithTitleAndPrimaryButtonAndX
-} from "./modals";
+  ModalBackground,
+  TextBlock,
+  PopupInput
+} from "./modals/styled-components";
+import { ModalWithTitleAndPrimaryAndSecondaryButtons } from "./modals/modal-title-primary-secondary";
+import { ModalWithTitleAndPrimaryButtonAndX } from "./modals/modal-title-primary-x";
 
 const Global = styled.div`
   font-family: "Open Sans", sans-serif;
