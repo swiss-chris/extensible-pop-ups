@@ -1,37 +1,11 @@
 import React from "react";
-import "./styles.css";
-import styled from "styled-components";
-import {
-  ModalBackground,
-  TextBlock,
-  ModalInput
-} from "./modals/styled-components";
 import { ModalWithTitleAndPrimaryAndSecondaryButtons } from "./modals/modal-title-primary-secondary";
-import { ModalWithTitleAndPrimaryButtonAndX } from "./modals/modal-title-primary-x";
 import { ModalWithTitleAndX } from "./modals/modal-title-x";
-import { PopupTable, PopupTableRow } from "./popup-table";
 import { ModalWithInputAndSecondaryButton } from "./modals/modal-with-input-sec-button";
 import { ModalWithInputAndX } from "./modals/modal-with-input-x";
-
-const Global = styled.div`
-  font-family: "Open Sans", sans-serif;
-  font-weight: normal;
-  color: rgb(65, 65, 65);
-  padding: 0;
-  margin: 0;
-
-  p {
-    padding: 0;
-    margin: 0;
-  }
-
-  box-sizing: border-box;
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-`;
+import { ModalBackground, TextBlock } from "./modals/styled-components";
+import { PopupTable, PopupTableRow } from "./modals/popup-table";
+import { Global } from "./global/global-styled-components";
 
 export default function App() {
   return (
