@@ -1,0 +1,64 @@
+import React from "react";
+import "./styles.css";
+import styled from "styled-components";
+import { ModalBackground, TextBlock, PopupInput } from "./styled-components";
+import {
+  ModalWithTitleAndPrimaryAndSecondaryButtons,
+  ModalWithTitleAndPrimaryButtonAndX
+} from "./modals";
+
+const Global = styled.div`
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  color: rgb(65, 65, 65);
+  padding: 0;
+  margin: 0;
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
+  box-sizing: border-box;
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+`;
+
+export default function App() {
+  return (
+    <Global>
+      <ModalBackground>
+        <ModalWithTitleAndPrimaryAndSecondaryButtons
+          title="Header Title"
+          middleSection={
+            <TextBlock height="95px">
+              <p>
+                These competitor/s will be removed from the ignored competitors
+                group and will now appear across the application.
+              </p>
+              <p>{"\u00A0"}</p>
+              <p>Are you sure you want to perform this action?</p>
+            </TextBlock>
+          }
+          primaryButtonText="Okay"
+          secondaryButtonText="Cancel"
+        />
+        <ModalWithTitleAndPrimaryAndSecondaryButtons
+          title="Header Title"
+          middleSection={<PopupInput placeholder="Enter Filter name" />}
+          primaryButtonText="Save"
+          secondaryButtonText="Cancel"
+        />
+        <ModalWithTitleAndPrimaryButtonAndX
+          title="Header Title"
+          middleSection={<PopupInput placeholder="Enter Filter name" />}
+          primaryButtonText="Save"
+          secondaryButtonText="Cancel"
+        />
+      </ModalBackground>
+    </Global>
+  );
+}
