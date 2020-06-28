@@ -17,10 +17,10 @@ export const ModalContent = styled.div`
   margin: 5px auto;
   height: ${props => props.height || "initial"};
   width: 400px;
-  border: 1px solid gray;
+  border: 1px solid ${props => props.borderColor || "white"};
   border-radius: 10px;
   background-color: white;
-  padding: 9px 19px 19px;
+  padding: 9px 19px 19px 19px;
   display: flex;
   flex-direction: column;
   color: rgb(65, 65, 65);
@@ -48,7 +48,7 @@ export const TextBlock = styled.div`
   height: ${props => props.height || "initial"};
 `;
 
-export const PopupInput = styled(StyledInput)`
+export const ModalInput = styled(StyledInput)`
   height: 40px;
   border: 1px solid #d2d2d2;
   border-radius: 2px;

@@ -11,12 +11,14 @@ import { ModalWith3Sections } from "./modal-3-sections";
 export const ModalWithTitleAndPrimaryAndSecondaryButtons = ({
   height,
   title,
+  borderColor,
   middleSection,
   primaryButtonText,
   secondaryButtonText
 }) => (
   <ModalWith3Sections
     height={height}
+    borderColor={borderColor}
     topSection={<Title>{title}</Title>}
     middleSection={middleSection}
     bottomSection={

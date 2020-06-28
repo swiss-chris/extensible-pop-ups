@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {
   ModalBackground,
   TextBlock,
-  PopupInput
+  ModalInput
 } from "./modals/styled-components";
 import { ModalWithTitleAndPrimaryAndSecondaryButtons } from "./modals/modal-title-primary-secondary";
 import { ModalWithTitleAndPrimaryButtonAndX } from "./modals/modal-title-primary-x";
@@ -36,7 +36,8 @@ export default function App() {
     <Global>
       <ModalBackground>
         <ModalWithTitleAndPrimaryAndSecondaryButtons
-          title="Header Title"
+          title="Delete Competitors"
+          borderColor="red"
           middleSection={
             <TextBlock height="95px">
               <p>
@@ -51,14 +52,14 @@ export default function App() {
           secondaryButtonText="Cancel"
         />
         <ModalWithTitleAndPrimaryAndSecondaryButtons
-          title="Header Title"
-          middleSection={<PopupInput placeholder="Enter Filter name" />}
+          title="Create saved filter"
+          middleSection={<ModalInput placeholder="Enter Filter name" />}
           primaryButtonText="Save"
           secondaryButtonText="Cancel"
         />
         <ModalWithTitleAndPrimaryButtonAndX
-          title="Header Title"
-          middleSection={<PopupInput placeholder="Enter Filter name" />}
+          title="Create Saved Filter"
+          middleSection={<ModalInput placeholder="Enter Filter name" />}
           primaryButtonText="Save"
           secondaryButtonText="Cancel"
         />

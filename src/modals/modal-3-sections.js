@@ -5,11 +5,12 @@ import { MiddleSection } from "./styled-components";
 
 export const ModalWith3Sections = ({
   height,
+  borderColor,
   topSection,
   middleSection,
   bottomSection
 }) => (
-  <Modal height={height}>
+  <Modal height={height} borderColor={borderColor}>
     {topSection}
     <MiddleSection>{middleSection}</MiddleSection>
     {bottomSection}
