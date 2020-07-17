@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledInput } from "../general/general-styled-components";
+import { StyledInput } from "../global/global-styled-components";
 
 export const ModalBackground = styled.div`
   position: fixed; /* Stay in place */
@@ -35,13 +35,16 @@ export const MiddleSection = styled.div`
 
 // Section Content
 
-export const Title = styled.div`
+export const TitleArea = styled.div`
   height: 31px;
   line-height: 22px;
-  font-weight: bold;
-  font-size: 16px;
   padding-bottom: 8px;
   border-bottom: 1px solid #d2d2d2;
+`;
+
+export const TitleText = styled.div`
+  font-size: ${props => (props.fontSize ? props.fontSize : 16)}px;
+  font-weight: ${props => (props.fontWeight ? props.fontWeight : "bold")};
 `;
 
 export const TextBlock = styled.div`

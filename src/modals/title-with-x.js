@@ -1,22 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import { string, func } from "prop-types";
+import { node, func } from "prop-types";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Title } from "./styled-components";
+import { TitleArea } from "./styled-components";
 
 const FontAwesomeIconWithHeight = styled(FontAwesomeIcon)`
   height: 22px;
 `;
 
-const StyledTitleWithX = styled(Title)`
+const StyledTitleWithX = styled(TitleArea)`
   display: flex;
   justify-content: space-between;
 `;
 
-export const TitleWithX = ({ title, xCallback }) => (
+export const TitleAreaWithX = ({ titleArea, xCallback }) => (
   <StyledTitleWithX>
-    {title}
+    {titleArea}
     <FontAwesomeIconWithHeight
       height="22px"
       icon={faTimes}
@@ -26,7 +26,7 @@ export const TitleWithX = ({ title, xCallback }) => (
   </StyledTitleWithX>
 );
 
-TitleWithX.propTypes = {
-  title: string.isRequired,
+TitleAreaWithX.propTypes = {
+  titleArea: node.isRequired,
   xCallback: func.isRequired
 };

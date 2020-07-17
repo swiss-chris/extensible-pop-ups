@@ -1,11 +1,16 @@
 import React from "react";
 import { string, node } from "prop-types";
 import { Modal } from "./modal";
-import { TitleWithX } from "./title-with-x";
+import { TitleAreaWithX } from "./title-with-x";
 
-export const ModalWithTitleAndX = ({ height, title, xCallback, children }) => (
+export const ModalWithTitleAndX = ({
+  height,
+  titleAreaContent,
+  xCallback,
+  children
+}) => (
   <Modal height={height}>
-    <TitleWithX title={title} xCallback={xCallback} />
+    <TitleAreaWithX titleArea={titleAreaContent} xCallback={xCallback} />
     {children}
   </Modal>
 );
@@ -15,6 +20,6 @@ ModalWithTitleAndX.defaultProps = {
 };
 ModalWithTitleAndX.propTypes = {
   height: string,
-  title: string.isRequired,
+  titleAreaContent: node.isRequired,
   children: node.isRequired
 };

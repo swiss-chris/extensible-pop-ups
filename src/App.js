@@ -6,6 +6,7 @@ import { ModalWithTitleAndX } from "./modals/modal-title-x";
 import { ModalWithInput } from "./modals/modal-with-input";
 import { PopupTable, PopupTableRow } from "./modals/popup-table";
 import { ModalBackground, TextBlock } from "./modals/styled-components";
+import { TitleText } from "./modals/styled-components";
 
 export default function App() {
   return (
@@ -56,7 +57,12 @@ export default function App() {
           xCallback={() => alert("secondary button clicked !")}
         />
         <ModalWithTitleAndX
-          title="Header Title"
+          titleAreaContent={
+            <TitleText>
+              <span style={{ fontWeight: "normal" }}>Header </span>
+              <span>Title</span>
+            </TitleText>
+          }
           xCallback={() => alert("x clicked !")}
         >
           <PopupTable>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { string, func, node } from "prop-types";
+import { string, func } from "prop-types";
 import { ModalWithTitleAndPrimaryAndSecondaryButtons } from "./modal-title-primary-secondary";
 import { ModalInput } from "./styled-components";
 

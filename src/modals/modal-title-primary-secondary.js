@@ -1,7 +1,8 @@
 import React from "react";
 import { string, func, node } from "prop-types";
 import {
-  Title,
+  TitleText,
+  TitleArea,
   ButtonContainer,
   PrimaryButton,
   SecondaryButton
@@ -21,7 +22,11 @@ export const ModalWithTitleAndPrimaryAndSecondaryButtons = ({
   <ModalWith3Sections
     height={height}
     borderColor={borderColor}
-    topSection={<Title>{title}</Title>}
+    topSection={
+      <TitleArea>
+        <TitleText>{title}</TitleText>
+      </TitleArea>
+    }
     middleSection={middleSection}
     bottomSection={
       <ButtonContainer>
