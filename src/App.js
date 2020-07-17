@@ -12,6 +12,7 @@ export default function App() {
     <Global>
       <ModalBackground>
         <ModalWithTitleAndPrimaryAndSecondaryButtons
+          borderColor="red"
           title="Delete Competitors"
           middleSection={
             <TextBlock height="95px">
@@ -40,7 +41,6 @@ export default function App() {
         />
         <ModalWithTitleAndPrimaryButtonAndX
           title="Delete Competitors"
-          borderColor="red"
           middleSection={
             <TextBlock height="95px">
               <p>
