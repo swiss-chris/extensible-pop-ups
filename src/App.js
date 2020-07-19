@@ -1,32 +1,88 @@
 import React from "react";
 import { Global } from "./global/global-styled-components";
-import { ModalWithTitleAndPrimaryAndSecondaryButtons } from "./modals/modal-title-primary-secondary";
-import { ModalWithTitleAndPrimaryButtonAndX } from "./modals/modal-title-primary-x";
-import { ModalWithTitleAndX } from "./modals/modal-title-x";
-import { ModalWithInput } from "./modals/modal-with-input";
-import { PopupTable, PopupTableRow } from "./modals/popup-table";
-import { ModalBackground, TextBlock, Text } from "./modals/styled-components";
-import { TitleText } from "./modals/styled-components";
+import { ModalWithTitleAndX } from "./modals/111-modal-title-x";
+import { ModalWithTitleAndPrimaryButtonAndX } from "./modals/11111-modal-title-x-pr-button";
+import { ModalWithTitleAndPrimaryAndSecondaryButtons } from "./modals/1122-modal-title-2-buttons";
+import { ModalWithTitleAndInput } from "./modals/11221-modal-title-input";
+import { PopupTable, PopupTableRow } from "./modals/components/popup-table";
+import {
+  ModalBackground,
+  TextBlock
+} from "./modals/components/styled-components";
+
+const locationsWidth = 670;
 
 export default function App() {
   return (
     <Global>
       <ModalBackground>
+        <ModalWithTitleAndPrimaryAndSecondaryButtons
+          borderColor="red"
+          title="Delete Competitors"
+          primaryButtonText="Okay"
+          secondaryButtonText="Cancel"
+          primaryButtonCallback={() => alert("primary button clicked !")}
+          secondaryButtonCallback={() => alert("secondary button clicked !")}
+        >
+          <TextBlock height={95}>
+            <p>
+              These competitor/s will be removed from the ignored competitors
+              group and will now appear across the application.
+            </p>
+            <p>{"\u00A0"}</p>
+            <p>Are you sure you want to perform this action?</p>
+          </TextBlock>
+        </ModalWithTitleAndPrimaryAndSecondaryButtons>
+        <ModalWithTitleAndInput
+          title="Create saved filter"
+          placeholder="Enter Filter name"
+          primaryButtonText="Save"
+          secondaryButtonText="Cancel"
+          primaryButtonCallback={filter =>
+            alert(`And the filter name is: '${filter}'`)
+          }
+          secondaryButtonCallback={() => alert("secondary button clicked !")}
+        />
+        <ModalWithTitleAndPrimaryButtonAndX
+          title="Delete Competitors"
+          primaryButtonText="Okay"
+          primaryButtonCallback={() => alert("primary button clicked !")}
+          xCallback={() => alert("secondary button clicked !")}
+        >
+          <TextBlock height={95}>
+            <p>
+              These competitor/s will be removed from the ignored competitors
+              group and will now appear across the application.
+            </p>
+            <p>{"\u00A0"}</p>
+            <p>Are you sure you want to perform this action?</p>
+          </TextBlock>
+        </ModalWithTitleAndPrimaryButtonAndX>
         <ModalWithTitleAndX
-          width={670}
-          titleAreaContent={
-            <TitleText>
+          title="Header Title"
+          xCallback={() => alert("x clicked !")}
+        >
+          <PopupTable>
+            <PopupTableRow />
+            <PopupTableRow />
+            <PopupTableRow />
+          </PopupTable>
+        </ModalWithTitleAndX>
+        <ModalWithTitleAndX
+          width={locationsWidth}
+          title={
+            <>
               <span style={{ fontWeight: "normal" }}>
-                50 Locations applied to{" "}
+                50 Locations applied to
               </span>
-              <span>Brand Terms </span>
-            </TitleText>
+              <span> Brand Terms </span>
+            </>
           }
           xCallback={() => alert("x clicked !")}
         >
           <div
             style={{
-              width: "670px",
+              width: locationsWidth - 2 * 20, // padding
               height: "300px",
               overflowX: "hidden"
             }}
@@ -35,7 +91,9 @@ export default function App() {
               style={{
                 columnCount: "2",
                 columnWidth: "300px",
-                listStyleType: "none"
+                listStyleType: "none",
+                padding: 0,
+                margin: 0
               }}
             >
               <li>Alabama</li>
@@ -90,65 +148,6 @@ export default function App() {
               <li>Wyoming</li>
             </ul>
           </div>
-        </ModalWithTitleAndX>
-        <ModalWithTitleAndPrimaryAndSecondaryButtons
-          borderColor="red"
-          title="Delete Competitors"
-          middleSection={
-            <TextBlock height="95px">
-              <p>
-                These competitor/s will be removed from the ignored competitors
-                group and will now appear across the application.
-              </p>
-              <p>{"\u00A0"}</p>
-              <p>Are you sure you want to perform this action?</p>
-            </TextBlock>
-          }
-          primaryButtonText="Okay"
-          secondaryButtonText="Cancel"
-          primaryButtonCallback={() => alert("primary button clicked !")}
-          secondaryButtonCallback={() => alert("secondary button clicked !")}
-        />
-        <ModalWithInput
-          title="Create saved filter"
-          placeholder="Enter Filter name"
-          primaryButtonText="Save"
-          secondaryButtonText="Cancel"
-          primaryButtonCallback={filter =>
-            alert(`And the filter name is ... '${filter}'`)
-          }
-          secondaryButtonCallback={() => alert("secondary button clicked !")}
-        />
-        <ModalWithTitleAndPrimaryButtonAndX
-          title="Delete Competitors"
-          middleSection={
-            <TextBlock height="95px">
-              <p>
-                These competitor/s will be removed from the ignored competitors
-                group and will now appear across the application.
-              </p>
-              <p>{"\u00A0"}</p>
-              <p>Are you sure you want to perform this action?</p>
-            </TextBlock>
-          }
-          primaryButtonText="Okay"
-          primaryButtonCallback={() => alert("primary button clicked !")}
-          xCallback={() => alert("secondary button clicked !")}
-        />
-        <ModalWithTitleAndX
-          titleAreaContent={
-            <TitleText>
-              <span style={{ fontWeight: "normal" }}>Different Title </span>
-              <span>Normal Title </span>
-            </TitleText>
-          }
-          xCallback={() => alert("x clicked !")}
-        >
-          <PopupTable>
-            <PopupTableRow />
-            <PopupTableRow />
-            <PopupTableRow />
-          </PopupTable>
         </ModalWithTitleAndX>
       </ModalBackground>
     </Global>
